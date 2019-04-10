@@ -18,7 +18,7 @@
   <!-- compiles java src files and stores them into destination directory -->
   <target name="compile" depends="init">
     <javac srcdir="${build.src}" destdir="${build.dir}" includeantruntime="false"/>
-  </target>  
+  </target>
 
   <!-- creates a runable jar file and stores it into lib directory  -->
   <target name="jar" depends="init, compile">
@@ -27,6 +27,11 @@
         <attribute name = "Main-Class" value = "${build.mainclass}"/>
       </manifest>
     </jar>
-  </target>  
+  </target>
+
+  <!-- copies the runable jar file into the dist directory  -->
+  <target name="install" depends="init, compile, jar">
+    <copy file="${build.jarname}" todir="${dist.dir}"/>
+  </target>
 
 </project>
