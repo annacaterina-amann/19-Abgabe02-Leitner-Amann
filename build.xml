@@ -1,0 +1,11 @@
+<project name="${name}" default = "init">
+  <property file = "build.properties"/>
+
+  <!-- create directories which are needed in all consecutive targets  -->
+  <target name="init">
+    <mkdir dir="${build.dir}"/>
+    <mkdir dir="${lib.dir}"/>
+    <mkdir dir="${dist.dir}"/>
+  </target> 
+
+</project>
