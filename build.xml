@@ -20,4 +20,13 @@
     <javac srcdir="${build.src}" destdir="${build.dir}" includeantruntime="false"/>
   </target>  
 
+  <!-- creates a runable jar file and stores it into lib directory  -->
+  <target name="jar" depends="init, compile">
+    <jar destfile="${build.jarname}" basedir="${build.dir}" >
+      <manifest>
+        <attribute name = "Main-Class" value = "${build.mainclass}"/>
+      </manifest>
+    </jar>
+  </target>  
+
 </project>
