@@ -34,4 +34,11 @@
     <copy file="${build.jarname}" todir="${dist.dir}"/>
   </target>
 
+  <!-- runs the jar file from the dist directory with some parameters -->
+  <target name="run" depends="init, compile, jar, install">
+    <java jar="${build.distjarname}" fork="true">
+      <arg value="Anna Florian"/>
+    </java>
+  </target> 
+
 </project>
