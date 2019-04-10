@@ -15,4 +15,9 @@
     <delete dir="${dist.dir}"/>
   </target>
 
+  <!-- compiles java src files and stores them into destination directory -->
+  <target name="compile" depends="init">
+    <javac srcdir="${build.src}" destdir="${build.dir}" includeantruntime="false"/>
+  </target>  
+
 </project>
